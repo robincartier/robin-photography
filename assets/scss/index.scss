@@ -1,0 +1,140 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Parisienne");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400");
+@import url("https://fonts.googleapis.com/css2?family=Lekton");
+$header-font-family: 'Lekton', sans-serif;
+$menu-font-family: 'Oswald', sans-serif;
+$body-font-family: 'Lekton', sans-serif;
+
+html, body, h1, h2, h3, h4, h5, h6 {
+    font-family: $body-font-family;
+    color: rgb(228, 228, 228);
+}
+
+$border-color: rgb(231, 231, 231);
+$backgroup-color: rgb(50, 49, 49);
+
+.header {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+
+    height: 100%;
+    width: 150px;
+
+    background-color: $backgroup-color;
+    border-right: 2px solid $border-color;
+
+    $logo-size: 100px;
+
+    .logo {
+        width: $logo-size;
+        height: $logo-size;
+    }
+
+    .title {
+        margin: 5px auto;
+        padding-right: $logo-size;
+
+        flex: 1;
+
+        h1, h2 {
+            margin: auto;
+
+            font-family: $header-font-family;
+            color: rgb(228, 228, 228);
+
+        }
+    }
+}
+
+.category {
+    padding-bottom: 30px;
+
+    a {
+        font-family: $header-font-family;
+        color: rgb(228, 228, 228);
+        font-size: large;
+        text-decoration: none;
+    }
+}
+
+.content {
+    height: 100%;
+    flex: 1;
+
+    padding: 0 10px;
+
+    overflow: auto;
+    background-color: $backgroup-color;
+}
+
+.images {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 20px;
+
+    padding-bottom: 10px;
+}
+
+.menu {
+    margin-bottom: 10px;
+
+    ul {
+        list-style-type: none; // remove bullets
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-evenly;
+
+        li {
+            width: 100%;
+
+
+            a {
+                display: block;
+                padding: 10px 0;
+
+                color: rgb(228, 228, 228);
+                text-align: center;
+                // padding: 14px 16px;
+                text-decoration: none;
+
+            }
+        }
+    }
+}
+
+.focused-image {
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(30, 30, 30, 0.80);
+    
+    > img {
+        position:fixed;
+        z-index:2000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

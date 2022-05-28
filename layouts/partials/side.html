@@ -1,0 +1,37 @@
+
+<div class="header">
+    {{ with .Site.GetPage "header" }}
+        {{ with (.Resources.GetMatch "logo") }}
+            {{ $image := .Resize "x100" }}
+            <a class="logo" href="{{ $.Site.BaseURL }}">
+                <img src="{{ $image.RelPermalink }}">
+            </a>
+        {{ end }}
+        <div class="title">
+            {{ .Content }} 
+        </div>
+    {{ end }}
+    <nav class="menu">
+        <ul>
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+                {{ if .HasChildren }}
+                    <li>
+                        <a href="#">{{ .Name }}</a>
+                        <ul class="sub-menu">
+                            {{ range .Children }}
+                                <li>
+                                    <a href="{{ .URL }}">{{ .Name }}</a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                {{ else }}
+                    <li>
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </nav>
+</div>

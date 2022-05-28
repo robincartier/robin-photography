@@ -1,0 +1,18 @@
+{{ define "main" }}
+  photo/list
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <div class = "images">
+    {{ range .Pages }}
+      {{ $images := .Resources.ByType "image"  }}
+      {{ range $images }}
+        {{ $image := .Fit "400x200" }}
+        <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" class="focus-on-click">
+      {{ end }}
+    {{ end }} 
+  </div>
+
+{{ end }}
+
+
