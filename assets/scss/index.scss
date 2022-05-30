@@ -71,6 +71,11 @@ $backgroup-color: rgb(50, 49, 49);
         font-size: large;
         text-decoration: none;
     }
+
+    img {
+        height: auto;
+        width: 80%;
+    }
 }
 
 .content {
@@ -90,6 +95,11 @@ $backgroup-color: rgb(50, 49, 49);
     gap: 20px;
 
     padding-bottom: 10px;
+
+    > img {
+        height: 300px;
+        width: auto;
+    }
 }
 
 .menu {
@@ -123,7 +133,6 @@ $backgroup-color: rgb(50, 49, 49);
 }
 
 .focused-image {
-
     position: absolute;
     height: 100%;
     width: 100%;

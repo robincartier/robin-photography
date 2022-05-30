@@ -1,11 +1,9 @@
-{{ with .context.Site.GetPage .path }}
-  {{ $image := .Resources.GetMatch "main" }}
-  {{ $image := $image.Fit "500x500" }}
-  <div class = "category">
-    <a href="{{ add $.context.Site.BaseURL $.path }}">
-      <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
-    </a>
-    <br>
-    <a href="{{ add $.context.Site.BaseURL $.path }}">▸ {{ .Title }}</a>
-  </div>
-{{ end }}
+{{ $image := .Resources.GetMatch "main" }}
+{{ $image := $image.Fit "1200x1000" }}
+<div class = "category">
+  <a href="{{ .Permalink }}">
+    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+  </a>
+  <br>
+  <a href="{{ .Permalink }}">▸ {{ .Title }}</a>
+</div>

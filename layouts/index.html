@@ -3,7 +3,11 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
 
-  {{ partial "category" (dict "context" . "path" "/photo/cat" ) }}
-  {{ partial "category" (dict "context" . "path" "/photo/dog" ) }}
+
+  {{ with .Site.GetPage "/photo" }}
+    {{ range .Pages }}
+      {{ partial "category" . }}
+    {{ end }}
+  {{ end }}
 
 {{ end }}
