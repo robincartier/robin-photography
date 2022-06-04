@@ -1,9 +1,8 @@
 {{ $image := .Resources.GetMatch "main" }}
-{{ $image := $image.Fit "1200x1000" }}
 <div class = "category">
-  <a href="{{ .Permalink }}">
-    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+  <a href="{{ .RelPermalink }}">
+    <img src="{{ $image.RelPermalink }}">
   </a>
   <br>
-  <a href="{{ .Permalink }}">▸ {{ .Title }}</a>
+  <a href="{{ .RelPermalink }}">▸ {{ .Title }}</a>
 </div>

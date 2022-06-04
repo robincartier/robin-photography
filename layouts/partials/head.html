@@ -2,7 +2,7 @@
     <title>{{ .Title }}</title>
     <meta charset="UTF-8">
     {{ $style := resources.Get "scss/index.scss" | resources.ToCSS | resources.Minify }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     {{ $script := resources.Get "js/index.js" }}
-    <script src="{{ $script.Permalink }}" async></script>
+    <script src="{{ $script.RelPermalink }}" async></script>
 </head>

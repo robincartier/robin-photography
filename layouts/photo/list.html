@@ -7,8 +7,7 @@
     {{ range .Pages }}
       {{ $images := .Resources.ByType "image"  }}
       {{ range $images }}
-        {{ $image := .Fit "1200x1000" }}
-        <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" class="focus-on-click">
+        <img src="{{ .RelPermalink }}" class="focus-on-click">
       {{ end }}
     {{ end }} 
   </div>
