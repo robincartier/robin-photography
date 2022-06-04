@@ -35,9 +35,6 @@ function init() {
     for (let i = 0 ; i < images.length; i++) {
         const image = images[i];
 
-        image.style.transition = ".8s opacity";
-        image.style.cursor = "pointer";
-
         image.addEventListener("click", onClick);
     }
 }

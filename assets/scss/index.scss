@@ -74,7 +74,6 @@ body {
 
                 text-align: center;
                 text-decoration: none;
-
             }
         }
     }
@@ -100,14 +99,10 @@ body {
     gap: 20px;
 
     padding-bottom: 10px;
-
-    > img {
-        height: 300px;
-        width: auto;
-    }
 }
 
 .focused-image {
+    visibility: hidden;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -159,6 +154,13 @@ body {
         width: 90%;
     }
 }
+
+.images {
+    > img {
+        height: auto;
+        width: 100%;
+    }
+}
 /* --- end mobile style --- */
 
 
@@ -189,6 +191,15 @@ body {
         }
     }
 
+    .images {
+        > img {
+            height: 300px;
+            width: auto;
+
+            cursor: pointer;
+        }
+    }
+
     .footer {
         position: absolute;
         bottom: 0;
@@ -196,6 +207,10 @@ body {
         width: $header-width;
         box-sizing: border-box;
         padding: $header-padding;
+    }
+
+    .focused-image {
+        visibility: visible;
     }
 }
 /* --- end desktop style --- */
