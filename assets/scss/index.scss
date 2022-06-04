@@ -1,45 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Lekton");
+$font-family: 'Lekton', sans-serif;
+
+html, body, h1, h2, h3, h4, h5, h6, a {
+    font-family: $font-family;
+    color: rgb(228, 228, 228);
+}
+
+$border-color: rgb(231, 231, 231);
+$background-color: rgb(50, 49, 49);
+
+$header-width: 170px;
+$header-padding: 10px;
+$logo-size: 100px;
+
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    background-color: $background-color;
 }
 
 body {
     display: flex;
-    flex-direction: row;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Parisienne");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400");
-@import url("https://fonts.googleapis.com/css2?family=Lekton");
-$header-font-family: 'Lekton', sans-serif;
-$menu-font-family: 'Oswald', sans-serif;
-$body-font-family: 'Lekton', sans-serif;
-
-html, body, h1, h2, h3, h4, h5, h6 {
-    font-family: $body-font-family;
-    color: rgb(228, 228, 228);
-}
-
-$border-color: rgb(231, 231, 231);
-$backgroup-color: rgb(50, 49, 49);
 
 .header {
     display: flex;
-    flex-direction: column;
+    align-items: start;
 
-    padding: 10px;
-
-    height: 100%;
-    width: 150px;
-
-    background-color: $backgroup-color;
-    border-right: 2px solid $border-color;
-
-    $logo-size: 100px;
+    padding: $header-padding;
+    box-sizing: border-box;
 
     .logo {
         width: $logo-size;
@@ -48,16 +39,41 @@ $backgroup-color: rgb(50, 49, 49);
 
     .title {
         margin: 5px auto;
-        padding-right: $logo-size;
-
-        flex: 1;
 
         h1, h2 {
             margin: auto;
+        }
+    }
+}
 
-            font-family: $header-font-family;
-            color: rgb(228, 228, 228);
+.content {
+    flex: 1;
+    padding: 0 10px;
+}
 
+.footer {
+    margin: 10px 0;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-evenly;
+
+        li {
+            width: 100%;
+
+            a {
+                display: block;
+                padding: 10px 0;
+
+                text-align: center;
+                text-decoration: none;
+
+            }
         }
     }
 }
@@ -66,26 +82,13 @@ $backgroup-color: rgb(50, 49, 49);
     padding-bottom: 30px;
 
     a {
-        font-family: $header-font-family;
-        color: rgb(228, 228, 228);
         font-size: large;
         text-decoration: none;
     }
 
     img {
         height: auto;
-        width: 80%;
     }
-}
-
-.content {
-    height: 100%;
-    flex: 1;
-
-    padding: 0 10px;
-
-    overflow: auto;
-    background-color: $backgroup-color;
 }
 
 .images {
@@ -99,36 +102,6 @@ $backgroup-color: rgb(50, 49, 49);
     > img {
         height: 300px;
         width: auto;
-    }
-}
-
-.menu {
-    margin-bottom: 10px;
-
-    ul {
-        list-style-type: none; // remove bullets
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-
-        justify-content: space-evenly;
-
-        li {
-            width: 100%;
-
-
-            a {
-                display: block;
-                padding: 10px 0;
-
-                color: rgb(228, 228, 228);
-                text-align: center;
-                // padding: 14px 16px;
-                text-decoration: none;
-
-            }
-        }
     }
 }
 
@@ -147,3 +120,60 @@ $backgroup-color: rgb(50, 49, 49);
         transform: translate(-50%, -50%);
     }
 }
+
+/* --- mobile style --- */
+body {
+    flex-direction: column;
+    overflow: auto;
+}
+
+.header {
+    width: 100%;
+    flex-direction: row;
+}
+
+.category {
+    img {
+        width: 90%;
+    }
+}
+/* --- end mobile style --- */
+
+
+/* --- desktop style --- */
+@media screen and (min-width: 800px) {
+
+    body {
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .header {
+        flex-direction: column;
+
+        height: 100%;
+        width: $header-width;
+
+        border-right: 2px solid $border-color;
+    }
+
+    .content {
+        overflow: auto;
+    }
+
+    .category {
+        img {
+            width: 80%;
+        }
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: $header-width;
+        box-sizing: border-box;
+        padding: $header-padding;
+    }
+}
+/* --- end desktop style --- */

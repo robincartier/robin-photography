@@ -1,8 +1,6 @@
 {{ define "main" }}
-  homepage index
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-
 
   {{ with .Site.GetPage "/photo" }}
     {{ range .Pages }}
