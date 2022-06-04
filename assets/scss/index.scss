@@ -1,17 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Lekton");
 $font-family: 'Lekton', sans-serif;
 
-html, body, h1, h2, h3, h4, h5, h6, a {
-    font-family: $font-family;
-    color: rgb(228, 228, 228);
-}
-
+$font-color: rgb(228, 228, 228);
 $border-color: rgb(231, 231, 231);
 $background-color: rgb(50, 49, 49);
+$button-color: rgb(60, 59, 59);
 
 $header-width: 170px;
 $header-padding: 10px;
 $logo-size: 100px;
+
+html, body, h1, h2, h3, h4, h5, h6, a {
+    font-family: $font-family;
+    color: $font-color;
+}
 
 html, body {
     margin: 0;
@@ -120,6 +122,26 @@ body {
         transform: translate(-50%, -50%);
     }
 }
+
+#button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: $button-color;
+    color: $font-color;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  #button:hover {
+    background-color: #555;
+  }
 
 /* --- mobile style --- */
 body {

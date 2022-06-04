@@ -2,6 +2,30 @@ let maxWidth = 0;
 let maxHeight = 0;
 let ratio;
 
+const button = document.getElementById("button");
+const content = document.getElementById("content");
+const body = document.querySelector("body");
+
+content.onscroll = function() {
+    scrollFunction()
+};
+window.onscroll = function() {
+    scrollFunction()
+};
+
+function scrollFunction() {
+    if (content.scrollTop > 20 || document.documentElement.scrollTop  > 20) {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+}
+
+function topFunction() {
+    content.scrollTop = 0;
+    document.documentElement.scrollTop  = 0;
+}
+
 function init() {
     const images = document.querySelectorAll(".focus-on-click");
     maxWidth = Math.floor(window.innerWidth * .8);
