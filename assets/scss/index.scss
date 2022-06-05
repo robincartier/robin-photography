@@ -150,7 +150,7 @@ body {
 }
   
 /* --- mobile style --- */
-@media only screen and (max-width: 600pt) {
+@media only screen and (max-width: 800px) {
 
     h1 {
         font-size: 7vw;
@@ -186,7 +186,7 @@ body {
 
 
 /* --- desktop style --- */
-@media only screen and (min-width: 601pt) {
+@media only screen and (min-width: 800px) {
     
     h1 {
         font-size: 3vw;
