@@ -2,9 +2,8 @@
 <div class="header">
     {{ with .Site.GetPage "header" }}
         {{ with (.Resources.GetMatch "logo") }}
-            {{ $image := .Resize "x100" }}
             <a class="logo" href="{{ $.Site.BaseURL }}">
-                <img src="{{ $image.RelPermalink }}">
+                <img src="{{ .RelPermalink }}">
             </a>
         {{ end }}
         <div class="title">

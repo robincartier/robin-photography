@@ -7,8 +7,6 @@ $background-color: rgb(50, 49, 49);
 $button-color: rgb(60, 59, 59);
 
 $header-width: 170px;
-$header-padding: 10px;
-$logo-size: 100px;
 
 html, body, h1, h2, h3, h4, h5, h6, a {
     font-family: $font-family;
@@ -31,13 +29,7 @@ body {
     display: flex;
     align-items: start;
 
-    padding: $header-padding;
     box-sizing: border-box;
-
-    .logo {
-        width: $logo-size;
-        height: $logo-size;
-    }
 
     .title {
         margin: 5px auto;
@@ -50,7 +42,6 @@ body {
 
 .content {
     flex: 1;
-    padding: 0 10px;
 }
 
 .footer {
@@ -138,6 +129,8 @@ body {
 /* --- mobile style --- */
 @media only screen and (max-width: 1000px) {
 
+    $padding: 2vw;
+
     h1 {
         font-size: 7vw;
     }
@@ -153,6 +146,17 @@ body {
     .header {
         width: 100%;
         flex-direction: row;
+
+        padding: $padding;
+
+        .logo > img {
+            height: auto;
+            width: 14vw
+        }
+    }
+
+    .content {
+        padding: 0 $padding;
     }
 
     .category {
@@ -180,6 +184,8 @@ body {
 
 /* --- desktop style --- */
 @media only screen and (min-width: 1000px) {
+
+    $padding: 10px;
     
     h1 {
         font-size: 35px;
@@ -198,12 +204,19 @@ body {
 
         height: 100%;
         width: $header-width;
+        padding: $padding;
 
         border-right: 2px solid $border-color;
-    }
 
+        .logo > img {
+            height: 100px;
+            width: auto
+        }
+    }
+    
     .content {
         overflow: auto;
+        padding: 0 $padding;
     }
 
     .category {
@@ -229,7 +242,7 @@ body {
         left: 0;
         width: $header-width;
         box-sizing: border-box;
-        padding: $header-padding;
+        padding: $padding;
     }
 
     .focused-image {
