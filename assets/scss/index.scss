@@ -15,18 +15,6 @@ html, body, h1, h2, h3, h4, h5, h6, a {
     color: $font-color;
 }
 
-// h1 {
-//     font-size: 30vw;
-// }
-
-// h2 {
-//     font-size: 20vw;
-// }
-
-// h3 {
-//     font-size: 30vw;
-// }
-
 html, body {
     margin: 0;
     padding: 0;
@@ -107,8 +95,6 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    gap: 20px;
-
     padding-bottom: 10px;
 }
 
@@ -176,10 +162,17 @@ body {
     }
 
     .images {
+        gap: 4vw;
+
         > img {
             height: auto;
             width: 100%;
         }
+    }
+
+    #button {
+        font-size: 7vw;
+        padding: 0 4vw;
     }
 }
 /* --- end mobile style --- */
@@ -220,6 +213,8 @@ body {
     }
 
     .images {
+        gap: 20px;
+
         > img {
             height: 300px;
             width: auto;
@@ -239,6 +234,11 @@ body {
 
     .focused-image {
         visibility: visible;
+    }
+
+    #button {
+        font-size: 30px;
+        padding: 0 20px;
     }
 }
 /* --- end desktop style --- */
