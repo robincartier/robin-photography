@@ -1,5 +1,5 @@
 <head>
-    <title>{{ .Title }}</title>
+    <title>{{ .Site.Params.title }}</title>
     <meta charset="UTF-8">
     {{ $style := resources.Get "scss/index.scss" | resources.ToCSS | resources.Minify }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
